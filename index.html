@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparativo Giannini — Ferramenta de Vendas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="strings" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="hero-inner">
+    <p class="eyebrow">Ferramenta interna de vendas</p>
+    <h1>Comparativo Giannini</h1>
+    <p class="subtitle">Compare qualquer modelo Giannini com os principais concorrentes — feito para uso rápido em campo.</p>
+  </div>
+  <div class="strings" aria-hidden="true"><span></span><span></span><span></span></div>
+</header>
+
+<main>
+  <section class="controls" aria-label="Seleção de produtos">
+    <div class="control-group">
+      <label for="categoria-filter">Categoria</label>
+      <select id="categoria-filter"></select>
+    </div>
+    <div class="control-group">
+      <label for="giannini-select">Modelo Giannini (referência)</label>
+      <select id="giannini-select"></select>
+    </div>
+  </section>
+
+  <section id="competitor-controls" class="competitor-controls" aria-label="Concorrentes selecionados"></section>
+
+  <div class="add-row">
+    <button id="add-competitor" class="btn-add" type="button">+ Adicionar concorrente</button>
+    <span class="hint" id="add-hint"></span>
+  </div>
+
+  <section id="comparison" class="comparison" aria-live="polite"></section>
+
+  <p class="empty-state" id="empty-state">Selecione um modelo Giannini acima para começar a comparação.</p>
+</main>
+
+<footer>
+  <p>Dados de uso interno — Giannini. Última atualização dos dados: <span id="last-updated">—</span>.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
