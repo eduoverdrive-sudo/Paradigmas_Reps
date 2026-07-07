@@ -93,7 +93,7 @@ body {
    Controls
    ========================================================================== */
 main {
-  max-width: 1180px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 2.25rem 1.5rem 4rem;
 }
@@ -190,15 +190,12 @@ select:focus-visible, button:focus-visible {
    Comparison grid
    ========================================================================== */
 .comparison {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
   gap: 1.1rem;
-  overflow-x: auto;
-  padding-bottom: 0.5rem;
-  scrollbar-width: thin;
 }
 
 .card {
-  flex: 0 0 250px;
   background: var(--bg-panel);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -317,7 +314,7 @@ footer p { margin: 0; font-size: 0.78rem; }
    ========================================================================== */
 @media (max-width: 640px) {
   .controls { grid-template-columns: 1fr; }
-  .card { flex-basis: 210px; }
+  .comparison { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
