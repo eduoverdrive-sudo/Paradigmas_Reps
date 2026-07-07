@@ -1,25 +1,25 @@
 /* ==========================================================================
-   Design tokens
+   Design tokens — identidade visual Giannini (giannini.com.br)
    ========================================================================== */
 :root {
-  --bg: #EAE2D0;            /* parchment / spruce-top cream */
-  --bg-panel: #FFFDF8;      /* card surface */
-  --ink: #241710;           /* primary text, warm near-black */
-  --ink-soft: #5B4C3F;      /* secondary text */
-  --rosewood: #3B2417;      /* dark wood, header band */
-  --rosewood-deep: #2A1A10;
-  --brass: #A8763B;         /* primary accent (hardware gold) */
-  --brass-light: #D9B77C;
-  --forest: #3F5D48;        /* secondary accent (links/buttons) */
-  --forest-deep: #2E4635;
-  --diff-bg: #F6D68A;       /* difference highlight */
-  --diff-border: #B4791F;
-  --line: #D8CBB0;          /* hairline borders */
+  --green: #20B251;         /* verde de marca — logo, CTAs, destaques */
+  --green-dark: #17903F;    /* hover/estados ativos */
+  --green-tint: #E5F7EA;    /* fundo de destaque leve */
+  --navy: #243646;          /* azul-marinho — header/footer, texto primário */
+  --navy-deep: #1A2733;
+  --ink: #243646;
+  --ink-soft: #5B6874;
+  --bg: #FFFFFF;
+  --bg-panel: #FFFFFF;
+  --bg-soft: #F9F7F5;
+  --diff-bg: #E5F7EA;
+  --diff-border: #20B251;
+  --line: #E6E6E6;
   --radius: 6px;
 
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  --font-display: 'Bebas Neue', Impact, sans-serif;
+  --font-body: 'Roboto', Helvetica, Arial, sans-serif;
+  --font-label: 'Roboto', Helvetica, Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -38,48 +38,53 @@ body {
    Hero / header
    ========================================================================== */
 .hero {
-  background: linear-gradient(180deg, var(--rosewood) 0%, var(--rosewood-deep) 100%);
-  color: #F4ECDD;
-  padding: 2.75rem 1.5rem 3rem;
+  background: var(--navy);
+  color: #fff;
+  padding: 2.5rem 1.5rem 0;
   text-align: center;
+  border-bottom: 10px solid var(--green);
 }
 
-.strings {
-  max-width: 340px;
+.hero-inner {
+  max-width: 700px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+  padding-bottom: 2.5rem;
 }
-.strings span {
+
+.logo-mark {
   display: block;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--brass-light) 20%, var(--brass-light) 80%, transparent);
-  opacity: 0.65;
+  height: 28px;
+  width: auto;
+  margin: 0 auto 1.5rem;
 }
-.strings:first-of-type { margin-bottom: 1.5rem; }
-.strings:last-of-type { margin-top: 1.5rem; }
 
 .eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--brass-light);
-  margin: 0 0 0.6rem;
+  color: var(--navy);
+  background: var(--green);
+  padding: 0.28rem 0.7rem;
+  border-radius: 3px;
+  margin: 0 0 1rem;
 }
 
 .hero h1 {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(2.1rem, 5vw, 3.1rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: clamp(2.3rem, 6vw, 3.4rem);
   margin: 0 0 0.6rem;
-  letter-spacing: -0.01em;
+  line-height: 1;
 }
 
 .hero .subtitle {
-  font-size: 1.02rem;
-  color: #D9CBB4;
+  font-size: 1rem;
+  color: #C9D2DA;
   max-width: 34rem;
   margin: 0 auto;
 }
@@ -102,9 +107,10 @@ main {
 
 .control-group label {
   display: block;
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
+  font-weight: 700;
   font-size: 0.72rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--ink-soft);
   margin-bottom: 0.4rem;
@@ -120,13 +126,13 @@ select {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%235B4C3F' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%235B6874' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.85rem center;
   cursor: pointer;
 }
 select:focus-visible, button:focus-visible {
-  outline: 2px solid var(--forest);
+  outline: 2px solid var(--green);
   outline-offset: 2px;
 }
 
@@ -147,9 +153,9 @@ select:focus-visible, button:focus-visible {
   font-size: 0.72rem;
   cursor: pointer;
   text-decoration: underline;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
 }
-.remove-competitor:hover { color: var(--diff-border); }
+.remove-competitor:hover { color: #C0392B; }
 
 .add-row {
   display: flex;
@@ -159,23 +165,24 @@ select:focus-visible, button:focus-visible {
 }
 
 .btn-add {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
+  font-weight: 700;
   font-size: 0.8rem;
-  letter-spacing: 0.03em;
-  color: var(--forest-deep);
-  background: transparent;
-  border: 1px solid var(--forest);
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: var(--green);
+  border: 1px solid var(--green);
   border-radius: var(--radius);
   padding: 0.55rem 1rem;
   cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition: background 0.15s ease, border-color 0.15s ease;
 }
-.btn-add:hover { background: var(--forest); color: #fff; }
+.btn-add:hover { background: var(--green-dark); border-color: var(--green-dark); }
 .btn-add:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+  background: var(--ink-soft);
   border-color: var(--ink-soft);
-  color: var(--ink-soft);
 }
 .hint { font-size: 0.8rem; color: var(--ink-soft); }
 
@@ -199,12 +206,12 @@ select:focus-visible, button:focus-visible {
   display: flex;
   flex-direction: column;
 }
-.card.is-reference { border-color: var(--brass); border-width: 2px; }
+.card.is-reference { border-color: var(--green); border-width: 2px; }
 
 .card-photo {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: #F1E9DA;
+  background: var(--bg-soft);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -217,18 +224,24 @@ select:focus-visible, button:focus-visible {
   border-bottom: 1px solid var(--line);
 }
 .card-tag {
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.08em;
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--brass);
-  display: block;
-  margin-bottom: 0.2rem;
+  color: var(--navy);
+  background: var(--green);
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+  margin-bottom: 0.4rem;
 }
 .card-head h3 {
   font-family: var(--font-display);
-  font-size: 1.12rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
   margin: 0;
   color: var(--ink);
 }
@@ -244,11 +257,12 @@ select:focus-visible, button:focus-visible {
 }
 .spec-row:last-child { border-bottom: none; }
 .spec-label {
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
+  font-weight: 500;
   font-size: 0.68rem;
   color: var(--ink-soft);
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   flex: 0 0 40%;
 }
 .spec-value { text-align: right; flex: 1; word-break: break-word; }
@@ -257,7 +271,8 @@ select:focus-visible, button:focus-visible {
   border-radius: 4px;
   padding: 0.1rem 0.35rem;
   box-shadow: inset 0 0 0 1px var(--diff-border);
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--navy);
 }
 
 .card-link {
@@ -265,13 +280,14 @@ select:focus-visible, button:focus-visible {
   text-align: center;
   padding: 0.75rem;
   margin-top: auto;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
+  font-weight: 700;
   font-size: 0.75rem;
-  color: var(--forest-deep);
+  color: var(--green-dark);
   text-decoration: none;
   border-top: 1px solid var(--line);
 }
-.card-link:hover { background: var(--forest); color: #fff; }
+.card-link:hover { background: var(--green); color: #fff; }
 
 .empty-state {
   text-align: center;
@@ -283,11 +299,18 @@ select:focus-visible, button:focus-visible {
 
 footer {
   text-align: center;
-  padding: 1.5rem;
-  font-size: 0.78rem;
-  color: var(--ink-soft);
-  border-top: 1px solid var(--line);
+  padding: 1.75rem 1.5rem;
+  background: var(--navy);
+  color: #C9D2DA;
+  border-top: 8px solid var(--green);
 }
+footer .footer-logo {
+  display: block;
+  height: 22px;
+  width: auto;
+  margin: 0 auto 0.75rem;
+}
+footer p { margin: 0; font-size: 0.78rem; }
 
 /* ==========================================================================
    Responsive
