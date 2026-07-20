@@ -72,9 +72,12 @@ function filteredProducts() {
 
 function refreshSelectOptions() {
   const products = filteredProducts();
-  populateSelect(el("giannini-select"), products.filter((p) => p.marca === "Giannini"), {
+  const gianniniSelect = el("giannini-select");
+  const prevGiannini = gianniniSelect.value;
+  populateSelect(gianniniSelect, products.filter((p) => p.marca === "Giannini"), {
     placeholder: "Selecione um modelo Giannini…",
   });
+  if ([...gianniniSelect.options].some((o) => o.value === prevGiannini)) gianniniSelect.value = prevGiannini;
   document.querySelectorAll(".competitor-select").forEach((sel) => {
     const prev = sel.value;
     populateSelect(sel, products.filter((p) => p.marca !== "Giannini"), {
