@@ -18,6 +18,7 @@ const SPEC_FIELDS = [
 
 const MAX_COMPETITORS = 5;
 let PRODUCTS = [];
+let COMPARISONS = {};
 let competitorCount = 0;
 
 const el = (id) => document.getElementById(id);
@@ -119,6 +120,22 @@ function addCompetitorSlot() {
   updateAddButtonState();
 }
 
+function resetCompetitorSlots() {
+  el("competitor-controls").innerHTML = "";
+  competitorCount = 0;
+}
+
+function applyCuratedComparison(gianniniRotulo) {
+  const curated = COMPARISONS[gianniniRotulo];
+  if (!curated || !curated.length) return;
+  resetCompetitorSlots();
+  curated.slice(0, MAX_COMPETITORS).forEach((rotulo) => {
+    addCompetitorSlot();
+    const selects = document.querySelectorAll(".competitor-select");
+    selects[selects.length - 1].value = rotulo;
+  });
+}
+
 function relabelCompetitors() {
   const groups = el("competitor-controls").querySelectorAll(".control-group");
   groups.forEach((g, i) => {
@@ -210,8 +227,9 @@ function render() {
 }
 
 async function init() {
-  const res = await fetch("data.json");
-  PRODUCTS = await res.json();
+  const [prodRes, compRes] = await Promise.all([fetch("data.json"), fetch("comparisons.json")]);
+  PRODUCTS = await prodRes.json();
+  COMPARISONS = await compRes.json();
 
   const categorias = [...new Set(PRODUCTS.map((p) => p.categoria))].sort();
   const catSelect = el("categoria-filter");
@@ -231,7 +249,11 @@ async function init() {
   if (dates.length) el("last-updated").textContent = dates[dates.length - 1];
 
   catSelect.addEventListener("change", () => { refreshSelectOptions(); render(); });
-  el("giannini-select").addEventListener("change", render);
+  el("giannini-select").addEventListener("change", (e) => {
+    applyCuratedComparison(e.target.value);
+    updateAddButtonState();
+    render();
+  });
   el("add-competitor").addEventListener("click", addCompetitorSlot);
 
   render();
