@@ -75,7 +75,7 @@ function refreshSelectOptions() {
   const products = filteredProducts();
   const gianniniSelect = el("giannini-select");
   const prevGiannini = gianniniSelect.value;
-  populateSelect(gianniniSelect, products.filter((p) => p.marca === "Giannini"), {
+  populateSelect(gianniniSelect, products.filter((p) => p.marca === "Giannini" && COMPARISONS[p.rotulo]), {
     placeholder: "Selecione um modelo Giannini…",
   });
   if ([...gianniniSelect.options].some((o) => o.value === prevGiannini)) gianniniSelect.value = prevGiannini;
