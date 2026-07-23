@@ -6,11 +6,9 @@
     "Seizi - Multi Smart (Guitarra)",
     "Tagima - Super Smart (Guitarra)"
   ],
-  "Giannini - GF-1D (Violão)": [
-    "Strinberg - SD200C (Violão)",
-    "Benson - GD100CE (Violão)",
-    "Zellmer - Heritage (Violão)",
-    "Tagima - Andes NTABS (Violão)"
+  "Giannini - GAC DLX CEQ (Violão)": [
+    "Seizi - Ryu Cutaway (Violão)",
+    "Taylor - 314CE (Violão)"
   ],
   "Giannini - GAC PLUS CEQ (Violão)": [
     "Tagima - Dallas Gran Reserva (Violão)",
@@ -18,7 +16,8 @@
   ],
   "Giannini - GAC STD CEQ (Violão)": [
     "Giannini - GSF-3 CEQ (Violão)",
-    "Tagima - Rio Negro MILLS (Violão)"
+    "Tagima - Rio Negro MILLS (Violão)",
+    "Strinberg - FS4D (Violão)"
   ],
   "Giannini - GAE09 Plus (Guitarra)": [
     "Strinberg - SPS230 (Guitarra)",
@@ -42,11 +41,24 @@
   ],
   "Giannini - GTG-36S (Violão)": [
     "Tagima - Porteno  (Violão)",
-    "Seizi - Mini Tokyo (Violão)"
+    "Seizi - Mini Tokyo (Violão)",
+    "Strinberg - SR200 (Violão)"
   ],
   "Giannini - CS34 SPG EQ (Cavaquinho)": [
     "Strinberg - CS25E (Cavaquinho)",
     "Malibu - MC10MME (Cavaquinho)",
     "Zellmer - 2110 (Cavaquinho)"
+  ],
+  "Giannini - GDC STD CEQ (Violão)": [
+    "Takamine - GD12CE (Violão)",
+    "Hofma - HMF290 (Violão)",
+    "Strinberg - DD1C (Violão)"
+  ],
+  "Giannini - GDC Plus CEQ (Violão)": [
+    "Eagle - CH889 (Violão)"
+  ],
+  "Giannini - DRC DLX CEQ (Violão)": [
+    "Takamine - GD51CE (Violão)",
+    "Tagima - Sunset NTOP (Violão)"
   ]
 }
